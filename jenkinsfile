@@ -5,7 +5,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    sudo apt install nodejs
+                    sudo apt install nodejs -y
                 '''
                 sh 'sudo apt install npm'
             }
@@ -38,11 +38,7 @@ pipeline {
             }
         }
 
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
+        
     }
 
     post {
